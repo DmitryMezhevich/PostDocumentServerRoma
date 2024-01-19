@@ -40,14 +40,14 @@ module.exports = class MailList {
             ac: '',
             ad: '',
             ae: '',
-            af: 375295609213,
+            af: 375336820105,
             ag:
                 parseInt(
                     model.client.phone
                         .replace(/\s|-/g, '')
                         .replace(/^80/, '375')
                 ) ?? '',
-            ah: 'ip.miazhevich@gmail.com',
+            ah: 'uvelomleniya@mail.ru',
         };
     }
 };
