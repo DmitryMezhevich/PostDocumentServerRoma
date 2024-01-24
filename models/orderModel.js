@@ -5,9 +5,9 @@ module.exports = class OrderModel {
     post;
 
     constructor(module) {
-        const costOfProduct = parseFloat(module.K.replace(',', '.'));
+        const costOfProduct = parseFloat(String(module.K).replace(',', '.'));
         const costOfDelivery = module.AF
-            ? parseFloat(module.AF.replace(',', '.'))
+            ? parseFloat(String(module.AF).replace(',', '.'))
             : '';
 
         this.order = {
