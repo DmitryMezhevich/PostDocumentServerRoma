@@ -244,22 +244,22 @@ class DocumentHelper {
 
     // Создаем электронный список для почты csv
     async generateMailList(models, nameFile, nameFolder, code) {
-        const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+        const dateShipment = models[0].dateShipment
             .toLocaleDateString('en-GB', {
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric',
             })
             .replace(/\//g, '.');
-        const tempNameFile = `${nameFile}${nextDay.replace(/\./g, '_')}`;
+        const tempNameFile = `${nameFile}${dateShipment.replace(/\./g, '_')}`;
         // Создаем новую книгу Excel
         const workbook = new ExcelJS.Workbook();
         const sheet = workbook.addWorksheet(tempNameFile); // Добавляем лист
 
         const header = {
             a: 692178784,
-            b: nextDay,
-            c: 1000,
+            b: '21.11.2023',
+            c: 10000,
             d: models.length,
             e: code, // 48 - E-commers Standart, 50 - E-commers Elit, 4 - посылки без ОЦ,
             f: 1,

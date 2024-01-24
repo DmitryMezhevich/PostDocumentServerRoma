@@ -1,7 +1,9 @@
 module.exports = class MailList {
     mailList;
+    dateShipment;
 
     constructor(model, index) {
+        this.dateShipment = model.order.date.dispatch
         this.mailList = {
             a: index,
             b: model.client.surname ?? '',
